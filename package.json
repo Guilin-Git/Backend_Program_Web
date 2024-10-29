@@ -1,0 +1,14 @@
+{
+  "name": "backend-program-web",
+  "version": "1.0.0",
+  "description": "Backend sistema de bater ponto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guilherme Braga e Georges Andraus",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
