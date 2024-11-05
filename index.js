@@ -1,7 +1,22 @@
-let express = require('express');
-let app = express();
+const express = require('express');
+const app = express();
+const PORT = 3000;
 
-app.get('/abc', (req, res) => {
+
+const sequelize = require('./config/db');
+
+
+
+sequelize.authenticate().then(() => {
+    console.log("CONEXÃO SUCESSO!")
+}).catch(error => {
+    console.log("erro");
+});
+
+
+
+//Rotas
+app.get('/', (req, res) => {
     res.send("Chamada ao recurso realizada com sucesso");
 
 });
@@ -9,4 +24,18 @@ app.get('/abc', (req, res) => {
 app.get('/users', (req, res) => {
     res.send("Chamada ao recurso realizada com sucesso");
 
+});
+
+app.get('/users/:id', (req, res) => {
+    res.send("Chamada ao recurso realizada com sucesso");
+
+});
+
+app.post('/rotapost', (req, res) => {
+    res.send("Chamada ao recurso realizada com sucesso");
+
+});
+
+app.listen(PORT, () => {
+    console.log("Servidor aguardando requisições");
 });
